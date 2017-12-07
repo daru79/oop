@@ -1,12 +1,41 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dariusz
- * Date: 07.12.17
- * Time: 11:28
- */
 
 class BattleResult
 {
+    private $usedJediPowers;
+    private $winningShip;
+    private $losingShip;
+
+    public function __construct($usedJediPowers, Ship $winningShip, Ship $losingShip)
+    {
+        $this->usedJediPowers = $usedJediPowers;
+        $this->winningShip = $winningShip;
+        $this->losingShip = $losingShip;
+    }
+
+    /**
+     * @return bool
+     */
+    public function wereJediPowersUsed()
+    {
+        return $this->usedJediPowers;
+    }
+
+    /**
+     * @return Ship
+     */
+    public function getWinningShip()
+    {
+        return $this->winningShip;
+    }
+
+    /**
+     * @return Ship
+     */
+    public function getLosingShip()
+    {
+        return $this->losingShip;
+    }
+
 
 }
